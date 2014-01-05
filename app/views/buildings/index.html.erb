@@ -15,7 +15,9 @@
     <td><%= building.state %></td>
     <td><%= building.postal_code %></td>
     <td><%= building.description %></td>
-    <td><%= building.owner.first_name %> <%= building.owner.last_name %></td>
+    <% if building.owner.present? %>
+      <td><%= building.owner.first_name %> <%= building.owner.last_name %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
