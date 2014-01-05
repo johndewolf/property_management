@@ -22,6 +22,7 @@ feature 'user creates a building', %Q{
     click_button 'Create Building'
     expect(page).to have_content('Building successfully created')
   end
+
   scenario 'fail to create building and show errors with invalid attributes' do
     visit '/buildings/new'
     click_button 'Create Building'

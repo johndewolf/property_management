@@ -17,9 +17,17 @@ feature 'user correlates building with owner', %Q{
     fill_in 'City', with: 'Boston'
     fill_in 'Postal code', with: '01201'
     select 'MA', from: 'State'
+
     select "#{owner.first_name} #{owner.last_name}", from: 'Owner'
     click_button 'Create Building'
-
     expect(owner.buildings.count) == 1
+    expect(Building.last.owner.first_name) == owner.first_name
+  end
+
+  scenario 'user deletes owner and it is not associated with property' do
+    FactoryGirl.create(:building)
+    visit '/owners/'
+    click_link 'Delete'
+    expect(Building.last.owner_id).to be_nil
   end
 end

@@ -12,7 +12,7 @@ feature 'user creates a building', %Q{
   # If I specify the required information, the owner is recorded and I am redirected to enter another new owner
   scenario 'create owner with valid attributes' do
     visit '/owners/new'
-    fill_in 'First name', with: 'Al'
+    fill_in 'First name', with: 'Bal'
     fill_in 'Last name', with: 'Capone'
     fill_in 'Email', with: 'BigAlC@yahoo.com'
     click_button 'Submit owner'
@@ -29,7 +29,7 @@ feature 'user creates a building', %Q{
 
   scenario 'user is directed to page to create new owner after successful submit' do
     visit '/owners/new'
-    fill_in 'First name', with: 'Al'
+    fill_in 'First name', with: 'Hal'
     fill_in 'Last name', with: 'Capone'
     fill_in 'Email', with: 'BigAlC@yahoo.com'
     click_button 'Submit owner'

@@ -8,7 +8,7 @@ feature 'views all buildings', %Q{
   # Acceptance Criteria:
   # It must display first name, last name, and email for each owner
   scenario 'user visits index page' do
-    owner1 = FactoryGirl.create(:owner)
+    owner1 = FactoryGirl.create(:owner, first_name: 'Tal')
     owner2 = FactoryGirl.create(:owner, first_name: 'Cal')
     owner3 = FactoryGirl.create(:owner, first_name: 'Sal')
     visit '/owners/'

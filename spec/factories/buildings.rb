@@ -7,8 +7,6 @@ FactoryGirl.define do
     state "MA"
     postal_code "03062"
     description ""
-    owner_id 1
-
     owner
   end
 end

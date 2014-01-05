@@ -23,6 +23,13 @@ class BuildingsController < ApplicationController
     @buildings = Building.all
   end
 
+  def destroy
+    @building = Building.find(params[:id])
+    if @building.destroy
+      redirect_to buildings_path, notice: 'Building was deleted'
+    end
+  end
+
   protected
   def building_params
     params.require(:building).permit(:address, :city, :state, :postal_code, :description, :owner_id)

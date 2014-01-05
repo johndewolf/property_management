@@ -17,7 +17,11 @@
     <td><%= building.description %></td>
     <% if building.owner.present? %>
       <td><%= building.owner.first_name %> <%= building.owner.last_name %></td>
+    <% else %>
+      <td>n.a.</td>
     <% end %>
+    <td><%= link_to 'Delete', building, method: :delete %></td>
   </tr>
 <% end %>
-</table>
+</table><br>
+<%= link_to 'Add new Building', new_building_path %>
