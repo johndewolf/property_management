@@ -1,0 +1,16 @@
+<h2>Submit new owner:</h2>
+<% if @owner.errors.any? %>
+  <ul>
+    <% @owner.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= simple_form_for @owner do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :company %>
+  <%= f.button :submit, 'Submit owner' %>
+<% end %>
