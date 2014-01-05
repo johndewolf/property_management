@@ -4,4 +4,8 @@ class Owner < ActiveRecord::Base
   validates_email_format_of :email
   has_many :buildings,
     inverse_of: :owner
+
+  def owner_name
+    "#{first_name} #{last_name}"
+  end
 end
