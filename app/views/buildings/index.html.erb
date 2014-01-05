@@ -1,0 +1,11 @@
+<h1>Buildings:</h1>
+
+<ul>
+<% @buildings.each do |building| %>
+  <li><%= building.address %></li>
+  <li><%= building.city %></li>
+  <li><%= building.state %></li>
+  <li><%= building.postal_code %></li>
+  <li><%= building.description %></li>
+<% end %>
+</ul>
